@@ -1,0 +1,123 @@
+.wrapper {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-image:url(./images/login_bg.jpg);
+	background-repeat:no-repeat;
+	background-position:center;
+	background-size: cover;
+    font-family: 微软雅黑;
+    overflow: hidden;
+}
+
+.wrapper .close{
+    position: absolute;
+    top: 1.6rem;
+    left: 1.6rem;
+    width: 2.6rem;
+    opacity: 0.85;
+}
+
+.wrapper .close:hover{
+    opacity:1;
+}
+
+.wrapper .logo{
+    margin-top:20%;
+}
+
+.wrapper .logo img{
+    width: 64%;
+    height: auto;
+    margin-bottom: 7%;
+}
+
+.wrapper .logo input{
+    border: 1px solid #fff;
+    border-radius: 3rem;
+    width: 88%;
+    background: none;
+    padding: 0.85rem 0;
+    text-align: center;
+    margin-bottom: 1.3rem;
+    font-size:1.6rem;  
+    color: #fff  
+}
+
+.wrapper .logo input::-ms-input-placeholder{
+    text-align: center;
+}
+
+.wrapper .logo input::-webkit-input-placeholder{
+    text-align: center;
+}
+
+.wrapper .logo input::-moz-placeholder{
+    color: #fff;
+    opacity: 1;
+}
+
+input::-ms-input-placeholder{text-align: center;} 
+input::-webkit-input-placeholder{text-align: center;} 
+
+.wrapper .logo .btn{
+    background: #21b589;
+    border: 1px solid #21b589;
+    border-radius: 3rem;
+    width: 88%;
+    padding: 0.85rem 0;
+    text-align: center;
+    margin-bottom: 1rem;
+    font-size:1.6rem;  
+    color: #fff;
+}
+
+.wrapper .tip{
+    height: 2rem;
+    background: url(./images/login_line.png) no-repeat center center;
+    line-height: 2rem;
+    background-size: 1px 2rem;
+}
+
+.wrapper .tip label{
+    color: #fff;
+    margin: 0 2rem;
+    font-size: 1.3rem;
+    font-weight: normal;
+    
+}
+
+.wrapper .tip img{
+    height: 2rem;
+    width: 1px;
+    vertical-align: middle;
+}
+
+.wrapper .software{
+    width: 100%;
+    position: absolute;
+    bottom: 4rem;
+    left: 0; 
+    text-align: center; 
+    padding: 0 15%;
+    z-index: -1;
+}
+
+.wrapper .software img{
+    width: 20%;
+    margin: 0 6%;
+}
+
+.wrapper .software_bg{
+    position: absolute;
+    bottom: 2rem;
+    height: 1.2rem;
+    text-align: center;
+}
+
+.wrapper .software_bg img{
+    width: 90%;
+}

@@ -1,0 +1,24 @@
+.x-list {padding: 0;margin: 0}
+.x-list #undefined_listTemplateUl1 li{padding: 10px 3%;width: 96%}
+.x-list #undefined_listTemplateUl1 .x-output{padding: 0}
+.x-list #undefined_listTemplateUl1 .output_message{font-size: 1rem;margin-bottom: 10px;color: #444}
+.x-list #undefined_listTemplateUl1 .pic a{display: block;width: 100%}
+.x-list #undefined_listTemplateUl1 .pic a ins{display: block;width: 32.8%;margin:0 0.8% 3px 0;overflow: hidden;padding: 0;float: left;height: 6rem}
+.x-list #undefined_listTemplateUl1 .pic a ins img{width: 100%;width: 100%}
+.x-list #undefined_listTemplateUl1 .pic a ins:nth-child(3n){margin-right: 0}
+.x-list #undefined_listTemplateUl1 .pic{margin-bottom: 16px;overflow: hidden;}
+.x-list #undefined_listTemplateUl1 .dateTime,.x-list #undefined_listTemplateUl1 .author,.x-list #undefined_listTemplateUl1 .views{color: #959595;font-size: 0.9rem;margin-right: 2%;display: inline-block;}
+.x-list #undefined_listTemplateUl1 .views{margin-right: 0;text-align: right;background: url(./images/browse_icon.png) no-repeat left center;padding-left: 1.3rem;background-size: 1rem;float: right;}
+
+
+
+
+
+
+
+
+
+
+
+
+

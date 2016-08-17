@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# Wex5
+.cache/
+.release/
+
+# Wevapers
+data/
