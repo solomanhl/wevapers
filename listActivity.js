@@ -16,6 +16,12 @@ define(function(require){
 		this.name = event.params.name;
 		
 		this.updateUI();
+		
+		var pre_forum_post = this.comp("pre_forum_post");
+		pre_forum_post.setFilter('filter0',"fid=" + this.fid + " and first=1");
+		
+		pre_forum_post.refreshData();
+		this.comp("list1").refresh();
 	};
 	
 	Model.prototype.updateUI = function(){

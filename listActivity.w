@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <div xmlns="http://www.w3.org/1999/xhtml" component="$UI/system/components/justep/window/window" design="device:m;" xid="window" class="window">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="width:390px;height:371px;top:87px;left:271px;" onParamsReceive="modelParamsReceive"> 
-  <div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="pre_forum_post" queryAction="queryPre_forum_post" saveAction="savePre_forum_post" url="/wevapers/wevapers" tableName="pre_forum_post" idColumn="position"><column label="pid" name="pid" type="Integer" xid="default1"></column>
+  <div component="$UI/system/components/justep/model/model" xid="model" style="width:390px;height:auto;top:148px;left:311px;" onParamsReceive="modelParamsReceive"> 
+  <div component="$UI/system/components/justep/data/data" autoLoad="true" xid="forum_post"></div><div component="$UI/system/components/justep/data/baasData" autoLoad="false" xid="pre_forum_post" queryAction="queryPre_forum_post" saveAction="savePre_forum_post" url="/wevapers/wevapers" tableName="pre_forum_post" idColumn="position" limit="6"><column label="pid" name="pid" type="Integer" xid="default1"></column>
   <column label="fid" name="fid" type="Integer" xid="default2"></column>
   <column label="tid" name="tid" type="Integer" xid="default3"></column>
   <column label="first" name="first" type="Boolean" xid="default4"></column>
@@ -28,7 +28,8 @@
   <column label="replycredit" name="replycredit" type="Integer" xid="default25"></column>
   <column label="position" name="position" type="Integer" xid="default26"></column>
   <column label="reply" name="reply" type="String" xid="default27"></column>
-  <column label="quanstatus" name="quanstatus" type="Integer" xid="default28"></column></div>
+  <column label="quanstatus" name="quanstatus" type="Integer" xid="default28"></column>
+  </div>
   <div component="$UI/system/components/justep/data/baasData" autoLoad="true" xid="pre_forum_thread" queryAction="queryPre_forum_thread" saveAction="savePre_forum_thread" url="/wevapers/wevapers" tableName="pre_forum_thread" idColumn="tid" limit="-1"><column label="tid" name="tid" type="Integer" xid="default71"></column>
   <column label="fid" name="fid" type="Integer" xid="default72"></column>
   <column label="posttableid" name="posttableid" type="Integer" xid="default73"></column>
@@ -260,7 +261,7 @@
     <i class="x-pull-down-img glyphicon x-icon-pull-down" xid="i1"></i>
     <span class="x-pull-down-label" xid="span1">下拉刷新...</span></div> 
    <div class="x-scroll-content" xid="div2">
-  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list1" data="pre_forum_post" filter='$row.val("fid") == $model.getFid()' limit="3">
+  <div component="$UI/system/components/justep/list/list" class="x-list x-cards" xid="list1" data="pre_forum_post" limit="3" autoLoad="false">
    <ul class="x-list-template x-min-height list-group" xid="listTemplateUl1" componentname="$UI/system/components/justep/list/list#listTemplateUl" id="undefined_listTemplateUl1">
       <li xid="li1" class="x-min-height list-group-item" componentname="li(html)" id="undefined_li1">
       <div class="media" xid="media1">        
@@ -270,9 +271,9 @@
           <div class="pic">
             <a href="#" xid="a1">
               <ins><img class="" src="" alt="" xid="image1" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
-              <ins><img class="" src="" alt="" xid="image1" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
-              <ins><img class="" src="" alt="" xid="image1" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
-              <ins><img class="" src="" alt="" xid="image1" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
+              <ins><img class="" src="" alt="" xid="image2" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
+              <ins><img class="" src="" alt="" xid="image3" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
+              <ins><img class="" src="" alt="" xid="image4" bind-attr-src=' $model.findThumbPicBytid(val("tid")) '></img></ins>
             </a> 
           </div>
           <span component="$UI/system/components/justep/output/output" class="x-output dateTime" xid="output_time" bind-text=' $model.dateTime( val("dateline"))'></span>
