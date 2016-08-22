@@ -331,6 +331,13 @@ define(function(require){
 	};
 	
 	
+	//发帖
+	Model.prototype.image_publishClick = function(event){
+		var url = require.toUrl('./newPostActivity.w');
+	   justep.Shell.showPage(url);
+	};
+	
+	
 	return Model;
 });
 

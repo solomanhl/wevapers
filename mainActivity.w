@@ -3,7 +3,7 @@
 
 <div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="main" component="$UI/system/components/justep/window/window"
   design="device:m;">  
-  <div component="$UI/system/components/justep/model/model" xid="model" style="width:346px;height:461px;top:3px;left:530px;"
+  <div component="$UI/system/components/justep/model/model" xid="model" style="width:346px;height:auto;top:23px;left:132px;"
     onLoad="modelLoad"> 
     <div component="$UI/system/components/justep/data/data" autoLoad="true"
       xid="listData" idColumn="photo"> 
@@ -448,7 +448,7 @@
         <div class="x-titlebar-right reverse" xid="right1"> 
           <span xid="span5" class="center-block"> 
             <img src="" alt="" xid="image_publish" bind-attr-src="$model.toUrl(&quot;./images/publish.png&quot;)"
-              align="middle"/> 
+              align="middle" bind-click="image_publishClick"/> 
           </span>  
           <span xid="span4" class="center-block"> 
             <img src="" alt="" xid="image_search" bind-attr-src="$model.toUrl(&quot;./images/search_icon.png&quot;)"
