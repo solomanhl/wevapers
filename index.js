@@ -5,6 +5,7 @@ define(function(require) {
 
 	var Model = function() {
 		this.callParent();
+		justep.Shell.setIsSinglePage(true);
 		var shellImpl = new ShellImpl(this, {
 			"contentsXid" : "pages",
 			"pageMappings" : {

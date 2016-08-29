@@ -342,10 +342,10 @@ define(function(require){
 });
 
 $(function(){
-	$(".x-panel-bottom a").click(function(){
-		$(".x-panel-bottom a .this").removeClass("this")
-		$(this).find("span").addClass("this");
-	})
+//	$(".x-panel-bottom a").click(function(){
+//		$(".x-panel-bottom a .this").removeClass("this")
+//		$(this).find("span").addClass("this");
+//	})
 
 	// 底部导航切换
 

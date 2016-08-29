@@ -9,8 +9,25 @@ define(function(require){
 		this.callParent();
 		
 		this.uid = 2;	//userid
-		this.fid;	//论坛id
+		this.fid = "";	//论坛id
 	};
+	
+	
+	Model.prototype.modelParamsReceive = function(event){
+		var context = this.getContext();
+		var me = this;
+		var userId = event.params.userId;
+		var forumId = event.params.fId;
+		
+		if (userId != ""  || userId != null){
+			this.uid = userId;
+		}
+		
+		if (forumId != ""  || forumId != null){
+			this.fid = forumId;
+		}
+	};
+	
 
 
 	//发帖
@@ -21,11 +38,20 @@ define(function(require){
 		var pre_forum_post = this.comp("pre_forum_post");
 		pre_forum_post.open();
 		
-		if (this.fid =="" ){
-			window.plugins.toast.show("选择一个版块吧！", "long", "center");
+		if (this.fid =="" || this.fid ==null){
+			if ( justep.Browser.isX5App ){
+				window.plugins.toast.show("选择一个版块吧！", "long", "center");
+			}else{
+				justep.Util.hint("选择一个版块吧！");
+			}
 		}else{
 			if (title == "" || txt ==""){
-				window.plugins.toast.show("亲，总要说点什么吧！", "long", "center");
+				if ( justep.Browser.isX5App ){
+					window.plugins.toast.show("亲，总要说点什么吧！", "long", "center");
+				}else{
+					justep.Util.hint("亲，总要说点什么吧！");
+				}
+				
 			}else{
 				//添加数据
 //				pre_forum_post.add({
@@ -35,17 +61,20 @@ define(function(require){
 				
 //				alert("准备数据");
 				var timestampNow = new Date().getTime();//结果：1280977330748获取了当前毫秒的时间戳。
+				timestampNow = parseInt(timestampNow / 1000);
+				var pid = this.getPid();// 计算fid
+				var tid = this.getTid();//计算tid
 				var postRows = pre_forum_post.newData({
 //					index : 0,
 					defaultValues : [{
-						"pid" : 10002,
+						"pid" : pid,
 						"fid" : me.fid,
-						"tid" : 10000,
+						"tid" : tid,
 						"first" : true,
 						"author" : "王五",
 						"authorid" : me.uid,
 						"subject" : title,
-						"dateline" : parseInt(timestampNow / 1000),
+						"dateline" : timestampNow,
 						"message" : txt,
 						"useip" : "127.0.0.1",
 						"port" : 10000,
@@ -73,7 +102,7 @@ define(function(require){
 //					alert(JSON.stringify(resultData));
 					justep.Util.hint("发表成功！");
 					//跳转
-					
+					justep.Shell.closePage();
 				};
 				
 				var error = function(msg) {
@@ -94,6 +123,24 @@ define(function(require){
 		}
 		
 	};
+	
+	//计算fid
+	Model.prototype.getPid = function(){
+		var pre_forum_post = this.comp("pre_forum_post");
+		pre_forum_post.first();
+		lastpid = pre_forum_post.getValue("pid")
+		lastpid ++ ;
+		return lastpid;
+	};
+	
+	//计算tid
+	Model.prototype.getTid = function(){
+		var pre_forum_post = this.comp("pre_forum_post_tid");
+		pre_forum_post.first();
+		lasttid = pre_forum_post.getValue("tid")
+		lasttid ++ ;
+		return lasttid;
+	};
 
 	//弹出版块
 	Model.prototype.div_titleClick = function(event){
@@ -105,7 +152,24 @@ define(function(require){
 		var current = event.bindingContext.$object;//获得当前行
 		this.fid = current.val("fid");
 		this.comp("popOver1").hide();
+		$("#blackbg").hide();
 	};
 
 	return Model;
 });
+
+
+$(function(){
+	$(".x-titlebar .x-titlebar-title label").click(function(){
+		$(".list_staff").show();
+		$("#blackbg").show();
+	})	
+
+	$("#blackbg").click(function(){
+		$("#blackbg").hide();
+		$(".list_staff").hide();
+	})
+
+	// 选择板块弹窗
+
+})
